@@ -3,7 +3,8 @@
     <p class="text-center mb-5">Here you can create your own playlist, edit your already existing playlist, add songs, and show it to the world!</p>
     <hr>
     <div class="container">
-        <button class="btn btn-primary mb-4">New Playlists</button> 
+        <button class="btn btn-primary mb-4" (click)="addToPlaylist()">New Playlists</button> 
+        <!-- <app-add></app-add> -->
         <div class="card mb-4" *ngFor="let list of lists">
             <div class="card-header">
             <h3 id="text-margin">{{list.name}}</h3>
@@ -18,9 +19,8 @@
             <p>by {{song.artist}} . {{song.duration}} minutes</p>
         </div> 
         <div class="card-footer d-flex flex-wrap">
-            <p class="mr-5">DELETE</p>
+            <p class="mr-5" style="cursor: pointer; color: red;" (click)="delete(list)">DELETE</p>
             <P>EDIT</P>
         </div>
         </div>
 </div>
-<app-add></app-add>
